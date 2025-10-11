@@ -1,0 +1,149 @@
+/**
+     * Monokai/Ristretto theme for Rofi
+     */
+
+    * {
+        background:     #272822;
+        background-alt: #3e3d32;
+        foreground:     #f8f8f2;
+        selected:       #49483e;
+        active:         #a6e22e;
+        urgent:         #f92672;
+        
+        blue:           #66d9ef;
+        cyan:           #66d9ef;
+        green:          #a6e22e;
+        orange:         #fd971f;
+        pink:           #f92672;
+        purple:         #ae81ff;
+        yellow:         #e6db74;
+        
+        background-color: transparent;
+        text-color:       @foreground;
+    }
+
+    window {
+        transparency:       "real";
+        background-color:   @background;
+        border:             2px;
+        border-color:       @selected;
+        border-radius:      8px;
+        width:              600px;
+        padding:            0px;
+    }
+
+    mainbox {
+        background-color:   transparent;
+        padding:            0px;
+    }
+
+    inputbar {
+        background-color:   @background-alt;
+        text-color:         @foreground;
+        padding:            12px;
+        border-radius:      8px 8px 0px 0px;
+        children:           [ prompt, textbox-prompt-colon, entry ];
+    }
+
+    prompt {
+        text-color:         @green;
+        padding:            0px 8px 0px 0px;
+    }
+
+    textbox-prompt-colon {
+        expand:             false;
+        str:                "";
+        text-color:         @foreground;
+    }
+
+    entry {
+        text-color:         @foreground;
+        placeholder-color:  #75715e;
+        placeholder:        "Search...";
+    }
+
+    listview {
+        background-color:   transparent;
+        padding:            8px;
+        spacing:            4px;
+        scrollbar:          true;
+        lines:              8;
+    }
+
+    scrollbar {
+        width:              4px;
+        border:             0;
+        handle-color:       @selected;
+        handle-width:       4px;
+        padding:            0 0 0 4px;
+    }
+
+    element {
+        background-color:   transparent;
+        text-color:         @foreground;
+        padding:            8px;
+        border-radius:      4px;
+    }
+
+    element selected.normal {
+        background-color:   @selected;
+        text-color:         @green;
+    }
+
+    element normal.active {
+        text-color:         @blue;
+    }
+
+    element selected.active {
+        background-color:   @selected;
+        text-color:         @blue;
+    }
+
+    element normal.urgent {
+        text-color:         @urgent;
+    }
+
+    element selected.urgent {
+        background-color:   @selected;
+        text-color:         @urgent;
+    }
+
+    element-text {
+        background-color:   transparent;
+        text-color:         inherit;
+    }
+
+    element-icon {
+        background-color:   transparent;
+        size:               24px;
+        padding:            0px 8px 0px 0px;
+    }
+
+    message {
+        background-color:   @background-alt;
+        padding:            8px;
+        border-radius:      4px;
+        margin:             8px;
+    }
+
+    textbox {
+        text-color:         @foreground;
+    }
+
+    mode-switcher {
+        background-color:   @background-alt;
+        padding:            8px;
+        border-radius:      0px 0px 8px 8px;
+    }
+
+    button {
+        background-color:   transparent;
+        text-color:         @foreground;
+        padding:            8px 16px;
+        border-radius:      4px;
+    }
+
+    button selected {
+        background-color:   @selected;
+        text-color:         @green;
+    }
