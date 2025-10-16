@@ -29,11 +29,14 @@ bindsym $mod+n exec "chromium --app=https://www.notion.so/Home-285bc39e855681fc8
 bindsym $mod+y exec "chromium --app=https://youtube.com"
 bindsym $mod+o exec "obsidian"
 bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
-### Output configuration
-#
+# Float entire tabbed/stacked container
+bindsym $mod+Shift+f focus parent, floating toggle, move position center, focus child ### Output configuration
+# Remove borders for any container whose title starts with T[
+
+for_window [title="T\[com.mitchellh.ghostty\]"] border none
+for_window [title="T\[com.mitchellh.ghostty\]"] floating_modifier normal
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/htw/nixos/themes/ristretto/wallpapers/1-ristretto.jpg fill
 #
 # Example configuration:
 #
