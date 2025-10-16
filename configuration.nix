@@ -44,6 +44,7 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    enableCompletion = true;
 
     shellAliases = {
       ls = "lsd -l";
@@ -57,7 +58,14 @@
     '';
   };
 
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = ["vi-mode" "sudo"];
+  };
+
   environment.systemPackages = with pkgs; [
+    slurp
+    grimblast
     fzf
     authenticator
     imagemagick
