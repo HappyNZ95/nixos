@@ -1,1 +1,1 @@
-/home/htw/nixos/themes/ristretto/neovim.lua
+/home/htw/nixos/themes/nord/neovim.lua

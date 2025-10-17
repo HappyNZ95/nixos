@@ -9,6 +9,7 @@
     rofi = "rofi";
     nvim = "nvim";
     sway = "sway";
+    i3blocks = "i3blocks";
     ghostty = "ghostty";
     fastfetch = "fastfetch";
     hypr = "hypr";

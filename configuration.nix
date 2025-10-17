@@ -64,6 +64,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    i3blocks
     slurp
     grimblast
     fzf
@@ -87,6 +88,7 @@
     git
     alacritty
     ghostty
+    kitty
     chromium
     google-chrome
     remmina
@@ -94,6 +96,8 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

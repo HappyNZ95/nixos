@@ -32,7 +32,6 @@ bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
 # Float entire tabbed/stacked container
 bindsym $mod+Shift+f focus parent, floating toggle, move position center, focus child ### Output configuration
 # Remove borders for any container whose title starts with T[
-
 for_window [title="T\[com.mitchellh.ghostty\]"] border none
 for_window [title="T\[com.mitchellh.ghostty\]"] floating_modifier normal
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
@@ -97,7 +96,7 @@ for_window [title="T\[com.mitchellh.ghostty\]"] floating_modifier normal
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exit sway swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaymsg exit
 #
 # Moving around:
 #
@@ -247,7 +246,7 @@ bindsym $mod+r mode "resize"
 default_border pixel 0
 default_floating_border normal
 
-for_window [app_id="ghostty"] opacity 0.70
+#for_window [app_id="ghostty"] opacity 0.70
 blur enable
 blur_radius 7
 blur_passes 3

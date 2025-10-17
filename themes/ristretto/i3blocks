@@ -1,0 +1,41 @@
+[disk]
+command=df -h / | awk 'NR==2 {print "  "$3" / "$2}'
+interval=30
+color=#FB4934
+background=
+
+[memory]
+command=sh -c 'used=$(free -m | awk "/Mem:/ {printf \"%.1f\", \$3/1024}"); total=$(free -m | awk "/Mem:/ {printf \"%.1f\", \$2/1024}"); echo "  ${used}GiB/${total}GiB"'
+interval=1
+color=#FABD2F
+background=
+
+[cpu]
+command=echo "  $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5); printf("%.0f", usage)}')%"
+interval=2
+color=#83CFA6
+background=
+
+[volume]
+command=sh -c 'vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP "\d+(?=%)" | head -1); mute=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -oP "(?<=Mute: )\w+"); [ "$mute" = "yes" ] && echo "   muted" || echo "   ${vol}%"'
+interval=1
+color=#D3869B
+background=
+
+[battery]
+command=sh -c 'if [ -d /sys/class/power_supply/BAT0 ]; then p=$(cat /sys/class/power_supply/BAT0/capacity); s=$(cat /sys/class/power_supply/BAT0/status); if [ "$s" = "Discharging" ]; then echo "  ${p}%"; else echo "  ${p}%"; fi; else echo "  n/a"; fi'
+interval=10
+color=#B8BB26
+background=
+
+[wifi]
+command=sh -c 'ssid=$(nmcli -t -f active,ssid dev wifi | grep "^yes:" | cut -d: -f2); [ -n "$ssid" ] && echo "   $ssid" || echo "   No WiFi"'
+interval=5
+color=#8EC07C
+background=
+
+[time]
+command=echo "  $(date '+%a %d %b %H:%M:%S')   "
+interval=1
+color=#F9F5D7
+background=
