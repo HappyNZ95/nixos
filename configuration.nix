@@ -64,6 +64,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    jq
+    bottom
     i3blocks
     slurp
     grimblast
@@ -87,11 +89,12 @@
     wget
     git
     alacritty
-    ghostty
+    wezterm
     kitty
     chromium
     google-chrome
     remmina
+    bash
   ];
 
   fonts.packages = with pkgs; [

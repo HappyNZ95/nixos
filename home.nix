@@ -10,7 +10,7 @@
     nvim = "nvim";
     sway = "sway";
     i3blocks = "i3blocks";
-    ghostty = "ghostty";
+    wezterm = "wezterm";
     fastfetch = "fastfetch";
     hypr = "hypr";
     niri = "niri";
@@ -65,6 +65,7 @@ in {
   };
 
   home.packages = with pkgs; [
+    neovim-remote
     picom
     spotify
     wordgrinder

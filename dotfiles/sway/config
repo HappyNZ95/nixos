@@ -14,7 +14,7 @@ set $left h
 set $right l
 set $down j
 set $up k
-set $term ghostty
+set $term wezterm
 # Your preferred application launcher
 set $menu wmenu-run
 
@@ -27,13 +27,15 @@ bindsym $mod+i exec "chromium --app=https://reminders.icloud.com"
 bindsym $mod+m exec spotify
 bindsym $mod+n exec "chromium --app=https://www.notion.so/Home-285bc39e855681fc8a30f9d610d77ada"
 bindsym $mod+y exec "chromium --app=https://youtube.com"
-bindsym $mod+o exec "obsidian"
+bindsym $mod+o exec "obsidian"obsidian
 bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
 # Float entire tabbed/stacked container
 bindsym $mod+Shift+f focus parent, floating toggle, move position center, focus child ### Output configuration
 # Remove borders for any container whose title starts with T[
 for_window [title="T\[com.mitchellh.ghostty\]"] border none
 for_window [title="T\[com.mitchellh.ghostty\]"] floating_modifier normal
+assign [class="obsidian"] workspace 3
+no_focus [urgent=latest]
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
@@ -247,6 +249,9 @@ default_border pixel 0
 default_floating_border normal
 
 #for_window [app_id="ghostty"] opacity 0.70
+for_window [class="obsidian"] opacity 0.85
+for_window [class="obsidian"] blur enable
+for_window [class="obsidian"] shadows enable
 blur enable
 blur_radius 7
 blur_passes 3
