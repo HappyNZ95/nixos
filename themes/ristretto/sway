@@ -11,13 +11,13 @@ bar {
         background #2b1d16      
         focused_workspace #c47f5f #2b1d16 #e0c9a6
         inactive_workspace #2b1d16 #2b1d16 #7a5b46
-        urgent_workspace #d75f5f #2b1d16 #ffffff
+        urgent_workspace #2b1d16 #2b1d16 #7a5b46
     }
 }
 client.focused          #c47f5f #2b1d16 #e0c9a6 #c47f5f #c47f5f
 client.focused_inactive #7a5b46 #2b1d16 #a89078 #7a5b46 #7a5b46
 client.unfocused        #3a2b23 #2b1d16 #7a5b46 #3a2b23 #3a2b23
-client.urgent           #d75f5f #2b1d16 #ffffff #d75f5f #d75f5f
+client.urgent        #3a2b23 #2b1d16 #7a5b46 #3a2b23 #3a2b23
 client.placeholder      #2b1d16 #2b1d16 #7a5b46 #2b1d16 #2b1d16
 client.background       #2b1d16
 

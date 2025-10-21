@@ -64,6 +64,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kdePackages.kde-gtk-config
     jq
     bottom
     i3blocks
@@ -88,7 +89,6 @@
     vim
     wget
     git
-    alacritty
     wezterm
     kitty
     chromium

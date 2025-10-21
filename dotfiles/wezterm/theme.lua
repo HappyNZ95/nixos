@@ -1,3 +1,3 @@
 return {
-color_scheme = "Monokai Pro Ristretto (Gogh)"
+color_scheme = "nord"
 }

@@ -9,7 +9,7 @@ bar {
         background #2e3440
         focused_workspace #81a1c1 #3b4252 #eceff4
         inactive_workspace #2e3440 #2e3440 #4c566a
-        urgent_workspace #bf616a #2e3440 #eceff4
+        urgent_workspace #2e3440 #2e3440 #4c566a
     }
 }
 

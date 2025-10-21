@@ -6,11 +6,11 @@
   dotfiles = "${config.home.homeDirectory}/nixos/dotfiles";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    rofi = "rofi";
     nvim = "nvim";
     sway = "sway";
     i3blocks = "i3blocks";
     wezterm = "wezterm";
+    fuzzel = "fuzzel";
     fastfetch = "fastfetch";
     hypr = "hypr";
     niri = "niri";
@@ -30,6 +30,7 @@ in {
       credential.helper = "!gh auth git-credential";
     };
   };
+
   programs.zathura.enable = true;
 
   xdg.configFile =
@@ -45,26 +46,13 @@ in {
     defaultApplications = {
       "x-scheme-handler/http" = "chromium.desktop";
       "x-scheme-handler/https" = "chromium.desktop";
-      "inode/directory" = "org.gnome.Nautilus.desktop";
       "application/x-directory" = "org.gnome.Nautilus.desktop";
-    };
-  };
-
-  programs.rofi = {
-    enable = true;
-    theme = "ristretto";
-    package = pkgs.rofi-wayland;
-    configPath = "/home/htw/nixos/dotfiles/rofi/";
-    extraConfig = {
-      matching = "fuzzy";
-      kb-row-down = "Down,Control+j";
-      kb-row-up = "Up,Control+k";
-      kb-remove-to-eol = ""; # Disable the conflicting binding for Control + k
-      kb-accept-entry = "Control+m,Return,KP_Enter"; # Disable the conflicting binding for Control + j
+      "inode/directory" = "yazi.desktop";
     };
   };
 
   home.packages = with pkgs; [
+    discord
     neovim-remote
     picom
     spotify
