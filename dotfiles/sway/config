@@ -32,9 +32,12 @@ bindsym $mod+o exec "obsidian"obsidian
 bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
 # Float entire tabbed/stacked container
 bindsym $mod+Shift+f focus parent, floating toggle, move position center, focus child ### Output configuration
-# Remove borders for any container whose title starts with T[
-for_window [title="T\[com.mitchellh.ghostty\]"] border none
-for_window [title="T\[com.mitchellh.ghostty\]"] floating_modifier normal
+
+#Custom menus (fuzzel)
+
+bindsym $mod+T exec "/home/htw/nixos/bin/menus/theme.sh"
+
+
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
@@ -161,7 +164,8 @@ bindsym $mod+k workspace prev
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    workspace_layout tabbed
+    #workspace_layout tabbed
+    workspace 2 layout tabbed
     #bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split

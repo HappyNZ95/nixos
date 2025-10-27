@@ -1,1 +1,1 @@
-/home/htw/nixos/themes/nord/wezterm.lua
+/home/htw/nixos/themes/ristretto/wezterm.lua

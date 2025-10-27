@@ -30,6 +30,18 @@ link_or_copy "$BASE_DIR/$THEME/wezterm.lua" "$CURRENT/wezterm.lua"
 link_or_copy "$CURRENT/wezterm.lua" "$DOTFILES/wezterm/theme.lua" cp
 
 # ----------------------
+# Neovim
+# ----------------------
+link_or_copy "$BASE_DIR/$THEME/neovim.lua" "$CURRENT/neovim.lua"
+
+LUAFILE="$CURRENT/neovim.lua"
+for sock in /run/user/1000/nvim.*.0; do
+    if [ -S "$sock" ]; then
+        nvim --server "$sock" --remote-send "<Esc>:luafile $LUAFILE<CR>"
+        echo "🔄 Reloaded Neovim at $sock"
+    fi
+done
+# ----------------------
 # Sway / i3blocks
 # ----------------------
 link_or_copy "$BASE_DIR/$THEME/sway" "$CURRENT/sway"
@@ -51,15 +63,5 @@ link_or_copy "$CURRENT/obsidian.json" "$HOME/sync-vault/.obsidian/appearance.jso
 # Optional: Open Obsidian and reload
 xdg-open "obsidian://adv-uri?vault=sync-vault&commandid=app%3Areload"
 
-# ----------------------
-# Neovim
-# ----------------------
-link_or_copy "$BASE_DIR/$THEME/neovim.lua" "$CURRENT/neovim.lua"
 
-LUAFILE="$CURRENT/neovim.lua"
-for sock in /run/user/1000/nvim.*.0; do
-    if [ -S "$sock" ]; then
-        nvim --server "$sock" --remote-send "<Esc>:luafile $LUAFILE<CR>"
-        echo "🔄 Reloaded Neovim at $sock"
-    fi
-doneBASE_DIR/$THEME/wezterm.lua" "$CURRENT/wezterm.lua"
+BASE_DIR/$THEME/wezterm.lua" "$CURRENT/wezterm.lua"

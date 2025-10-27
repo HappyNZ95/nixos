@@ -27,7 +27,9 @@
     shell = pkgs.zsh;
   };
 
-  services.displayManager.ly.enable = true;
+  #services.displayManager.ly.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   programs.sway.enable = true;
   programs.hyprland.enable = true;
@@ -54,7 +56,6 @@
 
     promptInit = ''
       bindkey '^Y' autosuggest-accept
-      fastfetch
     '';
   };
 
@@ -64,7 +65,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kdePackages.kde-gtk-config
+    gopls
+  csharpier
+  tree-sitter
+  fd
+  lazygit
+    samba #smbclient
     jq
     bottom
     i3blocks
@@ -98,6 +104,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    fanwood
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.hack

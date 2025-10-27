@@ -46,8 +46,6 @@ in {
     defaultApplications = {
       "x-scheme-handler/http" = "chromium.desktop";
       "x-scheme-handler/https" = "chromium.desktop";
-      "application/x-directory" = "org.gnome.Nautilus.desktop";
-      "inode/directory" = "yazi.desktop";
     };
   };
 

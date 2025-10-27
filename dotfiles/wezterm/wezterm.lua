@@ -4,7 +4,7 @@ local config = {}
 
 config.window_decorations = "NONE"
 config.enable_tab_bar = false
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.95
 config.text_background_opacity = 1.0
 config.font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font", "FiraCode Nerd Font" })
 config.font_size = 12.0
